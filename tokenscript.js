@@ -46,7 +46,7 @@ console.log("ABI : see XHR Request response ...");
 console.log("Contract ABI => ");
 console.log(contractABI);        
             }
-    }// ABI
+    }// ABI 
      
 
     /***************************************************************
