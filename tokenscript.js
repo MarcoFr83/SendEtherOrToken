@@ -9,10 +9,13 @@
   let tokenSymbol;
   let tokenAddress;
   let tokenToAddress;
-  let contractABI = "";
   let tokenAmount;
+  let tokenNetwork;
+  let contractABI = "";
   let MyContract;
+  let urlApi;
 
+  window.web3 = new Web3(window.ethereum);
 
     /***************************************************************
     *       GET ABI FROM CONTRACT
@@ -25,8 +28,13 @@
   // upload ABI directly from token contract address
   // Voir pour virer le JQuery (=>fetch en async...)
      const getABI = async () => {
-        await $.getJSON('https://api-kovan.etherscan.io/api?module=contract&action=getabi&address=0x5161C0F8D8F8721eE30E7d5aBb273c6DA1A554ff&apikey=T5YVE6PQ1YH5PP3YGGPVNK8IE5AIMIGS24', 
-        function (data) {
+        tokenAddress = document.querySelector('#tokenAddress').value;
+        tokenNetwork = getProviderName(await web3.eth.getChainId()).api;
+        urlApi = "https://" + tokenNetwork + ".etherscan.io/api?module=contract&action=getabi&address=" + tokenAddress + "&apikey=T5YVE6PQ1YH5PP3YGGPVNK8IE5AIMIGS24";
+console.log(tokenNetwork);
+        //await $.getJSON('https://api-kovan.etherscan.io/api?module=contract&action=getabi&address=0x5161C0F8D8F8721eE30E7d5aBb273c6DA1A554ff&apikey=T5YVE6PQ1YH5PP3YGGPVNK8IE5AIMIGS24', 
+        await $.getJSON(urlApi, 
+            function (data) {
             contractABI = JSON.parse(data.result);
 //console.log("ABI :" + contractABI);            
         })
@@ -38,12 +46,8 @@ console.log("ABI : see XHR Request response ...");
 console.log("Contract ABI => ");
 console.log(contractABI);        
             }
-    }
+    }// ABI
     
-
-    const urlApi = "https://api.etherscan.io/api";      // construction url en fonction du provider
-    window.web3 = new Web3(window.ethereum);
-
 
     /***************************************************************
     *       TOKEN BALANCE 
@@ -129,7 +133,7 @@ console.log("Transfert : to =>" + tokenToAddress + " amount =>" + tokenAmount);
                     const txHash    = receipt.transactionHash;
                     let msgRender   = "Status =>"+ statusTx;
                     msgRender      += "  - Gas used =>"+ gasUSed;
-                    msgRender      += "  <br />- Tx Hash =>"+ txHash;
+                    msgRender      += "  <br />Tx Hash =>"+ txHash;
                     renderMessage("Transaction ok. : <br />" + msgRender + "", '#messageToken', "p1green")
                     getTokenBalance();
                 });
