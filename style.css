@@ -1,0 +1,96 @@
+
+.tip-button {
+    width: 150px;
+    height: 23px;
+    background-size: 100%;
+    background-image: url('../img/6_pay_mm_off.png') ;
+    cursor: pointer;
+  }
+  .tip-button:hover {
+    background-image: url('../img/6_pay_mm_over.png');
+  }
+  .tip-button:active {
+    background-image: url('../img/6_pay_mm_off.png');
+  }
+.token-button {
+    width: 150px;
+    height: 21px;
+    background-size: 100%;
+    background-image: url('../img/sendToken.png') ;
+    cursor: pointer;
+}
+.token-button:active {
+    background-image: url('../img/sendToken.png');
+}    
+.token-button:hover {
+  background-image: url('../img/sendToken.png');
+  background-color: black;
+}  
+.p0
+{
+  font: normal 17px Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif;
+  color : #0c6a96;
+}
+.p1
+{
+font: normal 10px Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif;
+}
+.p1red
+{
+font: normal 10px Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif;
+color : #ff0000;
+}
+.p1green
+{
+font: normal 10px Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif;
+color : #1b4706;
+}
+.p2
+{
+font: normal 12px Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif;
+color : #1b4706;
+}
+.p3
+{
+font: normal 16px Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif;
+font-style: italic;
+font-weight: bold;
+color : #241c50;
+}
+
+.global
+{
+  display:flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  
+}
+.globaldouble
+{
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 80px;
+  border: 1px solid;
+}
+.container {
+  position: relative;
+  margin: auto;
+  width: 90%;
+  border: 3px solid rgb(56, 98, 177);
+  padding: 1px;
+
+}
+
+.center {
+  position: absolute;
+  top: 57%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  font-size: 6px;
+}
+
+imgetherscan { 
+  width: 80%;
+  height: auto;
+}
