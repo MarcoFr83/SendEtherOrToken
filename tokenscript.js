@@ -1,7 +1,7 @@
 // Token test tx
 // 0x5161C0F8D8F8721eE30E7d5aBb273c6DA1A554ff 
 // 0x08081E5003291c10EcA280F8a1A16610A85860C4
-
+// 0x3841cE901b6d8bD32416127D81F355B57E4Bb4F2 DAVID
 // CNX metamask ok.
   let tokenSolde ;
   let tokenState = false;
@@ -57,7 +57,7 @@ console.log(contractABI);
 //        renderMessage(" Accessing token ... ", "#messageToken", "p1");
         try {
             MyContract = new web3.eth.Contract(contractABI,tokenAddress);
-            tokenSolde = await MyContract.methods.balanceOf("0xEF2C2a05638f4872f5732DFe5240b2Aa8315AcA1").call()*(10**-18);
+            tokenSolde = await MyContract.methods.balanceOf(tipper_addresses[0]).call()*(10**-18);
             tokenState = true;
             renderMessage("Solde " + tokenName + "(" + tokenSymbol +") :" + tokenSolde, "#eduToken", "p1green");
 //console.log(tokenSolde);
