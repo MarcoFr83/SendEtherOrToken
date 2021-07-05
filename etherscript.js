@@ -78,8 +78,11 @@ const getSolde= async (when) => {
 }
 
 
-//CHANGEMENT DE PROVIDER : RELOAD  
+//CHANGEMENT DE PROVIDER/account : RELOAD  
 ethereum.on('chainChanged', handleChainChanged);
+ethereum.on('accountsChanged', handleChainChanged);
+//ethereum.on('networkChanged', handleChainChanged)
+
 function handleChainChanged(_chainId) {
   // recommendation metamask
   window.location.reload();
