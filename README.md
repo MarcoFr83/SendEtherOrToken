@@ -5,3 +5,6 @@ It is just a sample work job.
 
 May it help some web3js beginners !
 (like i am)
+
+Usage :
+index.html (in VSC yu can right click-> live server)
